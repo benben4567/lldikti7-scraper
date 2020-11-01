@@ -48,7 +48,7 @@ class News extends Command
             $body = $response->body();
         } else {
             // insert DB {status: error, desc: Main website status response 404}
-            Scrap::insert([
+            Scrap::create([
                 'status' => 'error',
                 'description' => 'Main website status response 404'
             ]);
@@ -87,7 +87,7 @@ class News extends Command
         // if latest data different then insert
         if (count($new_data) > 0) {
             // insert DB {status: success, desc: Scraping success. Got [n] news!}
-            Scrap::insert([
+            Scrap::create([
                 'status' => 'success',
                 'description' => 'Got ['.count($new_data).'] news!',
             ]);
