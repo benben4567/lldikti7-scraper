@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Http;
 use Symfony\Component\DomCrawler\Crawler;
 use Illuminate\Support\Facades\DB;
 use Telegram\Bot\Laravel\Facades\Telegram;
+use Telegram\Bot\Keyboard\Keyboard;
 use App\Scrap;
 
 class News extends Command
@@ -101,9 +102,14 @@ class News extends Command
                     $text .= $dt['title'];
                     $text .= "\n";
                     $text .= "<a href=\"".$dt['link']."\">".$dt['link']."</a>";
+
+                    $reply_markup = Keyboard::make()->inline()->row(
+                                        Keyboard::inlineButton(['text' => 'Kunjungi Web', 'url' => $dt['link']]),
+                                    );
                     Telegram::sendMessage([
                         'chat_id' => env('TELEGRAM_CHANNEL_ID', ''),
                         'parse_mode' => 'HTML',
+                        'reply_markup' => $reply_markup,
                         'text' => $text
                     ]);
                     sleep(2);
