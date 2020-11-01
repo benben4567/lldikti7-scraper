@@ -25,7 +25,7 @@ If you want automate scraping, you can use cron job in your server.
 
 ## Requirement
 
-- PHP 7.2
+- PHP 7.3
 
 ## Dependencies
 
