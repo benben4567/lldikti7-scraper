@@ -25,7 +25,7 @@ If you want automate scraping, you can use cron job in your server.
 
 ## Requirement
 
-- PHP 7.2
+- PHP 7.3
 
 ## Dependencies
 
@@ -40,4 +40,4 @@ Anyone is welcome to contribute in this repository.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
